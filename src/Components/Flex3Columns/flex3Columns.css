@@ -1,0 +1,23 @@
+.wrapper{
+    background-color: green;
+    height: 22px;
+    width: 80vw;
+    display: flex;
+}
+
+.div1{
+    background-color: rgb(179, 209, 179);
+    flex: 1;
+    
+}
+
+.div2{
+    background-color: rgb(44, 117, 44);
+width: 65px ;    
+}
+
+.div3{
+    flex: 1;
+    background-color: rgb(1, 16, 1);
+
+}
