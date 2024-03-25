@@ -3,9 +3,9 @@ import React, { useMemo } from 'react';
 
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
-import CustomHeaderComponent from './Components/CustomHeaderComponent';
+import CustomHeaderComponent from './Components/CustomHeaderComponent.js';
 
-function CustomisedHeader() {
+export function CustomisedHeader() {
   const rowData = useMemo(
     () => [
       { nume: 'Ionescu', prenume: 'Ionica', varsta: '26', studii: 'licenta' },

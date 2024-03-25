@@ -2,7 +2,7 @@ import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
-import CustomCellRenderer from './Components/CustomCellRenderer';
+import CustomCellRenderer from './Components/CustomCellRenderer.js';
 
 const CellRenderer = () => {
   const containerStyle = useMemo(() => ({ width: 'auto', height: 'auto' }), []);

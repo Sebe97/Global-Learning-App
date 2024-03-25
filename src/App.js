@@ -10,12 +10,12 @@ import './index.css';
 
 import { AgGridReact } from 'ag-grid-react';
 import { Link, Route, Router, Routes } from 'react-router-dom';
-import CellRenderer from './Components/CellRenderer/CellRenderer';
-import CustomisedHeader from './Components/CustomizedHeader/CustomisedHeader';
-import Antdesign from './Components/AntD/Antdesign';
-import Flex3Columns from './Components/Flex3Columns/Flex3Columns';
+import CellRenderer from './Components/CellRenderer/CellRenderer.js';
+import CustomisedHeader from './Components/CustomizedHeader/CustomisedHeader.js';
+import Antdesign from './Components/AntD/Antdesign.js';
+import Flex3Columns from './Components/Flex3Columns/Flex3Columns.js';
 
-function App() {
+export function App() {
   return (
     <div className="App">
       <ul className="App-header">
