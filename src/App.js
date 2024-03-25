@@ -13,6 +13,7 @@ import { Link, Route, Router, Routes } from 'react-router-dom';
 import CellRenderer from './Components/CellRenderer/CellRenderer';
 import CustomisedHeader from './Components/CustomizedHeader/CustomisedHeader';
 import Antdesign from './Components/AntD/Antdesign';
+import Flex3Columns from './Components/Flex3Columns/Flex3Columns';
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
         <li>
           <Link to="/antd">AntDesign</Link>
         </li>
+        <li>
+          <Link to="/flex-3-columns">Flex3Columns</Link>
+        </li>
       </ul>
       <Routes>
         <Route exact path="/" component={<CellRenderer />}></Route>
@@ -40,6 +44,7 @@ function App() {
           element={<CustomisedHeader />}
         ></Route>
         <Route exact path="/antd" element={<Antdesign />}></Route>
+        <Route exact path="/flex-3-columns" element={<Flex3Columns />}></Route>
       </Routes>
     </div>
   );

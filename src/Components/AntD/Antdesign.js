@@ -1,16 +1,13 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Modal } from 'antd';
 import '../../App.css'; // CSS file for custom styling
 
 const Antdesign = () => {
   const [height, setHeight] = useState(400); // Initial height of the modal
-  const [initialY, setInitialY] = useState(400); // Initial Y coordinate of mouse when resizing starts
+  const initialY = useRef(400); // Initial Y coordinate of mouse when resizing starts
 
-  const handleResize = (e, initialPosition) => {
-    const diff = e.clientY - initialPosition;
-    console.log('initialPosition:', initialPosition);
-    console.log('e.clientY:', e.clientY);
-    console.log('diff:', diff);
+  const handleResize = (e) => {
+    const diff = e.clientY - initialY.current;
     setHeight(height + diff);
   };
 
@@ -23,16 +20,10 @@ const Antdesign = () => {
       <div
         className="resize-handle"
         onMouseDown={(e) => {
-          const initialPosition = e.clientY;
-          document.addEventListener('mousemove', (e) => {
-            handleResize(e, initialPosition);
-          });
+          initialY.current = e.clientY;
+          document.addEventListener('mousemove', handleResize);
           document.addEventListener('mouseup', () => {
-            document.removeEventListener(
-              'mousemove',
-              handleResize,
-              initialPosition
-            );
+            document.removeEventListener('mousemove', handleResize);
           });
         }}
       />
