@@ -1,6 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Modal } from 'antd';
-import '../../App.css'; // CSS file for custom styling
+import React, { useEffect, useRef, useState } from "react";
+import { Modal } from "antd";
+import "../../App.css"; // CSS file for custom styling
+import Button from "@mui/material/Button";
 
 // The goal is to have a resizable modale on the vertical axis
 
@@ -29,7 +30,9 @@ const Antdesign = () => {
 
   return (
     <>
-      <button onClick={openModal}> Open Modal</button>
+      <Button variant="outlined" onClick={openModal} sx={{ margin: "10px" }}>
+        Open Modal
+      </Button>
       <Modal
         open={open}
         onOk={handleOnOk}
@@ -41,9 +44,9 @@ const Antdesign = () => {
           className="resize-handle"
           onMouseDown={(e) => {
             initialY.current = e.clientY;
-            document.addEventListener('mousemove', handleResize);
-            document.addEventListener('mouseup', () => {
-              document.removeEventListener('mousemove', handleResize);
+            document.addEventListener("mousemove", handleResize);
+            document.addEventListener("mouseup", () => {
+              document.removeEventListener("mousemove", handleResize);
             });
           }}
         />

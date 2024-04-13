@@ -1,53 +1,45 @@
-import React, {
-  useState,
-  // useRef,
-  useEffect,
-  useMemo,
-  useCallback,
-} from 'react';
+// App.js
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import CellRenderer from "./Components/CellRenderer/CellRenderer.js";
+import CustomisedHeader from "./Components/CustomizedHeader/CustomisedHeader.js";
+import Antdesign from "./Components/AntD/Antdesign.js";
+import Flex3Columns from "./Components/Flex3Columns/Flex3Columns.js";
+import Home from "./Components/Home/Home.jsx";
+import MUIGrid from "./Components/MUI/MUIGrid.jsx";
+import Navbar from "./Components/NavBar/NavBar.jsx";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-import './index.css';
-
-import { AgGridReact } from 'ag-grid-react';
-import { Link, Route, Router, Routes } from 'react-router-dom';
-import CellRenderer from './Components/CellRenderer/CellRenderer.js';
-import CustomisedHeader from './Components/CustomizedHeader/CustomisedHeader.js';
-import Antdesign from './Components/AntD/Antdesign.js';
-import Flex3Columns from './Components/Flex3Columns/Flex3Columns.js';
-
-export function App() {
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#556cd6",
+    },
+    secondary: {
+      main: "#19857b",
+    },
+    error: {
+      main: "#ff0000",
+    },
+    background: {
+      default: "#fff",
+    },
+  },
+});
+export default function App() {
   return (
-    <div className="App">
-      <ul className="App-header">
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/cell-renderer">CellRenderer</Link>
-        </li>
-        <li>
-          <Link to="/customised-header">CustomisedHeader</Link>
-        </li>
-        <li>
-          <Link to="/antd">AntDesign</Link>
-        </li>
-        <li>
-          <Link to="/flex-3-columns">Flex3Columns</Link>
-        </li>
-      </ul>
-      <Routes>
-        <Route exact path="/" component={<CellRenderer />}></Route>
-        <Route exact path="/cell-renderer" element={<CellRenderer />}></Route>
-        <Route
-          exact
-          path="/customised-header"
-          element={<CustomisedHeader />}
-        ></Route>
-        <Route exact path="/antd" element={<Antdesign />}></Route>
-        <Route exact path="/flex-3-columns" element={<Flex3Columns />}></Route>
-      </Routes>
-    </div>
+    <>
+      <ThemeProvider theme={theme}>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/cell-renderer" element={<CellRenderer />} />
+          <Route path="/customised-header" element={<CustomisedHeader />} />
+          <Route path="/antd" element={<Antdesign />} />
+          <Route path="/flex-3-columns" element={<Flex3Columns />} />
+          <Route path="/MUI-Grid" element={<MUIGrid />} />
+        </Routes>
+      </ThemeProvider>
+    </>
   );
 }
-
-export default App;

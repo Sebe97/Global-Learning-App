@@ -1,5 +1,5 @@
-import React from 'react';
-import './flex3Columns.css';
+import React from "react";
+import "./flex3Columns.css";
 
 function Flex3Columns() {
   return (
