@@ -9,16 +9,21 @@ import {
 } from "@mui/material";
 import { NavigateNextOutlined, TextFields } from "@mui/icons-material";
 import { makeStyles } from "@mui/styles";
-
+import FormatColorFillIcon from "@mui/icons-material/FormatColorFill";
 // cu useStyles adaug calse custom elementelor, deci nu ma mai folosesc de
 // culorile default ale clasei
 // Deasemenea pot suprascrie diverse culori din thema material-ui
 const useStyles = makeStyles({
+  wrapper: { height: "400px" },
   title: {
-    backgroundColor: "yellow",
+    background: "#9c9c9c",
+    color: "white",
+  },
+  description: {
+    backgroundColor: "#7c7c7c",
     padding: 40,
     "&:Hover": {
-      backgroundColor: "red",
+      backgroundColor: "#5c5c5c",
       color: "white",
     },
     nextbutton: {
@@ -34,19 +39,32 @@ const useStyles = makeStyles({
   },
 });
 
-const CardComponent = () => {
+const CardComponentCustomClasses = () => {
   const classes = useStyles();
 
   return (
-    <Card>
+    <Card className={classes.wrapper}>
       <CardContent>
-        <Typography color="warning" className={classes.title} gutterBottom>
-          Input elements
-          <TextFields />
+        <Typography
+          variant="title"
+          color="warning"
+          className={classes.title}
+          gutterBottom
+        >
+          Custom Class
+        </Typography>
+        <Typography
+          color="warning"
+          className={classes.description}
+          gutterBottom
+          startIcon={<FormatColorFillIcon />}
+        >
+          In acest card am folosit: - custom classes folosing makeStyles
         </Typography>
         <TextField
           multiline
-          // rows={10}
+          rows={3}
+          label="Multiline"
           defaultValue="Default Value"
           variant="outlined"
           sx={{
@@ -70,4 +88,4 @@ const CardComponent = () => {
   );
 };
 
-export default CardComponent;
+export default CardComponentCustomClasses;

@@ -53,6 +53,9 @@ export default function Navbar() {
           <Button component={Link} to="/flex-3-columns">
             Flex3Columns
           </Button>
+          <Button component={Link} to="/hooks">
+            Hooks
+          </Button>
           <Button
             aria-controls="simple-menu"
             aria-haspopup="true"
@@ -60,7 +63,6 @@ export default function Navbar() {
           >
             Open Menu
           </Button>
-
           <Menu
             id="simple-menu"
             anchorEl={anchorEl}
@@ -80,6 +82,9 @@ export default function Navbar() {
           </Menu>
           <Button component={Link} to="/MUI-Grid">
             MUI Grid
+          </Button>
+          <Button component={Link} to="/login">
+            Login
           </Button>
         </ButtonGroup>
       </Toolbar>
