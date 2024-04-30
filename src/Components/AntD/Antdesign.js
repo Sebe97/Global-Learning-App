@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Modal } from "antd";
 import "../../App.css"; // CSS file for custom styling
-import Button from "@mui/material/Button";
-
+import { Button } from "@mui/material";
 // The goal is to have a resizable modale on the vertical axis
 
 const Antdesign = () => {

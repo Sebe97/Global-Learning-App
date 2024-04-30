@@ -8,54 +8,54 @@ import {
   TextField,
 } from "@mui/material";
 import { NavigateNextOutlined, TextFields } from "@mui/icons-material";
-import { makeStyles } from "@mui/styles";
 import FormatColorFillIcon from "@mui/icons-material/FormatColorFill";
 // cu useStyles adaug calse custom elementelor, deci nu ma mai folosesc de
 // culorile default ale clasei
 // Deasemenea pot suprascrie diverse culori din thema material-ui
-const useStyles = makeStyles({
-  wrapper: { height: "400px" },
-  title: {
-    background: "#9c9c9c",
-    color: "white",
-  },
-  description: {
-    backgroundColor: "#7c7c7c",
-    padding: 40,
-    "&:Hover": {
-      backgroundColor: "#5c5c5c",
-      color: "white",
-    },
-    nextbutton: {
-      fontweight: "bold",
-      fontSize: 20,
-      backgroundColor: "blue",
-      padding: 20,
-      "&:Hover": {
-        backgroundColor: "green",
-        color: "white",
-      },
-    },
-  },
-});
+// const useStyles = makeStyles({
+//   wrapper: { height: "400px" },
+//   title: {
+//     background: "#9c9c9c",
+//     color: "white",
+//   },
+//   description: {
+//     backgroundColor: "#7c7c7c",
+//     padding: 40,
+//     "&:Hover": {
+//       backgroundColor: "#5c5c5c",
+//       color: "white",
+//     },
+//     nextbutton: {
+//       fontweight: "bold",
+//       fontSize: 20,
+//       backgroundColor: "blue",
+//       padding: 20,
+//       "&:Hover": {
+//         backgroundColor: "green",
+//         color: "white",
+//       },
+//     },
+//   },
+// });
 
 const CardComponentCustomClasses = () => {
-  const classes = useStyles();
+  // const classes = useStyles();
 
   return (
-    <Card className={classes.wrapper}>
+    <Card>
       <CardContent>
         <Typography
           variant="title"
           color="warning"
-          className={classes.title}
+          // className={classes.title}
           gutterBottom
         >
-          Custom Class
+          Custom Classes, folosind MakeStyle nu mai e de actualitate, cei de la
+          MUI recomanda folosirea de Styled Components
         </Typography>
         <Typography
           color="warning"
-          className={classes.description}
+          // className={classes.description}
           gutterBottom
           startIcon={<FormatColorFillIcon />}
         >
@@ -76,7 +76,7 @@ const CardComponentCustomClasses = () => {
       </CardContent>
       <CardActions>
         <Button
-          className={classes.nextbutton}
+          // className={classes.nextbutton}
           size="small"
           endIcon={<NavigateNextOutlined />}
           color="secondary"
